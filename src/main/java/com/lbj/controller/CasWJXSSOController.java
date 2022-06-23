@@ -44,11 +44,6 @@ public class CasWJXSSOController {
 
     /**
      * 单点登录问卷星特定用户体系。根据url中systemId拼接请求地址,activity为具体问卷id。可以传或者不传
-     * @param request
-     * @param response
-     * @return
-     * @throws NoSuchAlgorithmException
-     * @throws IOException
      */
     @RequestMapping(value = "/wjxSSO",method = RequestMethod.GET)
     public String wjxSSO(HttpServletRequest request, HttpServletResponse response) throws NoSuchAlgorithmException, IOException {
@@ -70,8 +65,6 @@ public class CasWJXSSOController {
                 + "&userSystem=" + ssouserSystem
                 + "&systemId=" + systemId
                 + "&appid=" + appId1
-//                + "&islogin=1"
-//                + "returnurl=http://wenjuan.wnmc.edu.cn/vj/OjukbhA.aspx"
                 + "&activity=" + activity
                 + "&uid=" + uid + WjxSSOUtil.getSign(appId1,appKey1,uid);
 
